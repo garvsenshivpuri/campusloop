@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101014" />
+  <meta name="description" content="CampusLoop — the student-to-student marketplace for campus essentials." />
+  <title>CampusLoop — Find it on campus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CampusLoop home"><span class="brand-mark">↗</span><span>campus<span class="brand-accent">loop</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#explore">Explore</a><a href="#how-it-works">How it works</a><a href="#community">Community</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" id="savedNav" aria-label="Show saved items" title="Saved items">♡ <span class="saved-count" id="savedCount">0</span></button>
+      <button class="button button-ghost" id="loginBtn">Student sign in</button>
+      <button class="button button-primary" id="sellTopBtn">＋ List an item</button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> THE CAMPUS MARKETPLACE <span class="eyebrow-line"></span> MADE FOR STUDENTS</div>
+        <h1>Your next great<br><span class="gradient-text">find is on campus.</span></h1>
+        <p class="hero-sub">Good stuff deserves a second semester. Buy, sell and pass it on — all within your college community.</p>
+        <div class="hero-actions">
+          <a class="button button-primary button-large" href="#explore">Explore the loop <span>↗</span></a>
+          <button class="button button-glass button-large" id="heroSellBtn">＋ Sell something</button>
+        </div>
+        <div class="hero-proof"><div class="avatar-stack"><i>👩🏽‍🎓</i><i>🧑🏻‍💻</i><i>👨🏾‍🎓</i><i>👩🏻‍🔬</i></div><span><strong>Made for campus life.</strong><br>Pass it on. Keep it local.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Featured campus marketplace items">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="floating-tag tag-top">✳ STUDENT-TO-STUDENT</div>
+        <div class="hero-card hero-card-main"><div class="hero-card-image image-laptop"><span>TECH FINDS</span><b>⌘</b></div><div class="hero-card-info"><div><small>JUST DROPPED</small><strong>Upgrade your setup.</strong></div><span class="price-pill">from ₹499</span></div></div>
+        <div class="mini-float mini-book"><span>📚</span><div><b>Books, not bills.</b><small>Pass knowledge on</small></div></div>
+        <div class="mini-float mini-cycle"><span>🚲</span><div><b>Ride into the loop.</b><small>Find your next cycle</small></div></div>
+        <div class="floating-tag tag-bottom">↗ LESS WASTE. MORE VALUE.</div>
+      </div>
+      <div class="hero-bottom-note"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>01 / 04</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Marketplace categories"><div class="ticker-track"><span>BOOKS & NOTES ✳</span><span>TECH & GADGETS ✳</span><span>HOSTEL ESSENTIALS ✳</span><span>CYCLES & SPORTS ✳</span><span>FASHION ✳</span><span>LAB & ACADEMIC ✳</span><span>BOOKS & NOTES ✳</span><span>TECH & GADGETS ✳</span></div></section>
+
+    <section class="market-section section-wrap" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE GOOD STUFF, CIRCULATING</div><h2>Find your <span class="gradient-text">next thing.</span></h2><p class="section-sub">Pre-loved gems from people who share your campus.</p></div>
+        <button class="text-link" id="viewAllBtn">View all listings <span>↗</span></button>
+      </div>
+      <div class="market-controls">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search books, cycles, calculators..." aria-label="Search listings"><kbd>⌘ K</kbd></label>
+        <div class="filter-row" id="categoryFilters">
+          <button class="filter-chip active" data-category="All">✳ All items</button>
+          <button class="filter-chip" data-category="Books">📚 Books</button>
+          <button class="filter-chip" data-category="Electronics">💻 Electronics</button>
+          <button class="filter-chip" data-category="Hostel">🛏 Hostel</button>
+          <button class="filter-chip" data-category="Cycles">🚲 Cycles</button>
+          <button class="filter-chip" data-category="Other">✦ Other</button>
+        </div>
+      </div>
+      <div class="results-meta"><span id="resultsLabel">CURATED FOR YOUR CAMPUS</span><span id="resultCount">8 ITEMS</span></div>
+      <div class="listing-grid" id="listingGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><span>✳</span><h3>No finds in this corner.</h3><p>Try another search or category — your next favourite might be one click away.</p><button class="button button-primary" id="clearFilters">Clear filters</button></div>
+      <div class="load-more-wrap"><button class="button button-glass" id="loadMoreBtn">Show more finds <span>↓</span></button></div>
+    </section>
+
+    <section class="manifesto" id="how-it-works">
+      <div class="manifesto-inner">
+        <div class="eyebrow">A SMALL LOOP. A BIG DIFFERENCE.</div>
+        <h2>One student's <span class="gradient-text">unused</span><br>is another's <span class="outline-text">new favourite.</span></h2>
+        <p>College life moves fast. Your stuff can move smarter. Keep useful things in circulation, save money and meet the people behind the listings.</p>
+        <div class="steps">
+          <article><span class="step-no">01</span><div class="step-icon">⌕</div><h3>Discover</h3><p>Browse useful finds posted by students in your college community.</p></article>
+          <article><span class="step-no">02</span><div class="step-icon">↗</div><h3>Connect</h3><p>Reach out to the seller and ask questions. No checkout, no platform payments.</p></article>
+          <article><span class="step-no">03</span><div class="step-icon">♻</div><h3>Pass it on</h3><p>Meet safely on campus, inspect the item and give it a second life.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sell-banner section-wrap" id="community">
+      <div class="sell-banner-content"><div class="eyebrow">YOUR CUPBOARD CALLED.</div><h2>Someone on campus<br><span class="gradient-text">needs your stuff.</span></h2><p>That book you finished. The cycle you outgrew. The lamp collecting dust. Give it a new home.</p><button class="button button-primary button-large" id="sellBannerBtn">Put it in the loop <span>↗</span></button></div>
+      <div class="sell-visual"><div class="sell-orbit">↗</div><div class="sell-emoji">📦</div><div class="sell-sticker">GOOD THINGS<br>GO ROUND <span>✳</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-mark">↗</span><span>campus<span class="brand-accent">loop</span></span></a><span>Made for campus. Built for another life.</span><div><a href="#explore">Explore</a><a href="#how-it-works">How it works</a><a href="mailto:hello@campusloop.example">Contact</a></div><small>© <span id="year"></span> CampusLoop · Student-powered circularity</small></footer>
+
+  <div class="modal-backdrop hidden" id="listingModal" role="dialog" aria-modal="true" aria-labelledby="listingModalTitle">
+    <div class="modal listing-modal"><button class="modal-close" data-close aria-label="Close">×</button><div id="listingModalContent"></div></div>
+  </div>
+  <div class="modal-backdrop hidden" id="sellModal" role="dialog" aria-modal="true" aria-labelledby="sellModalTitle">
+    <div class="modal form-modal"><button class="modal-close" data-close aria-label="Close">×</button><div class="eyebrow">GIVE IT A SECOND LIFE</div><h2 id="sellModalTitle">List your <span class="gradient-text">item.</span></h2><p class="modal-intro">A few details, and your campus community can find it. This demo saves listings in this browser only.</p>
+      <form id="sellForm">
+        <label>Item name<input name="title" required maxlength="70" placeholder="e.g. Engineering Mathematics — Kreyszig"></label>
+        <div class="form-two"><label>Price (₹)<input name="price" type="number" min="0" required placeholder="450"></label><label>Category<select name="category" required><option value="">Choose one</option><option>Books</option><option>Electronics</option><option>Hostel</option><option>Cycles</option><option>Other</option></select></label></div>
+        <label>Short description<textarea name="description" required maxlength="240" rows="3" placeholder="Condition, age, what's included..."></textarea></label>
+        <div class="form-two"><label>Your name<input name="seller" required maxlength="40" placeholder="First name"></label><label>Contact email<input name="contact" type="email" required placeholder="you@college.edu"></label></div>
+        <label>Campus / college<input name="campus" required maxlength="60" placeholder="Your college name"></label>
+        <button class="button button-primary button-large form-submit" type="submit">Publish listing <span>↗</span></button>
+        <small class="form-note">Demo only: your listing stays in this browser using local storage. No payment or backend is connected.</small>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
